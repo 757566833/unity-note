@@ -1,0 +1,7 @@
+.markdown-body p {
+
+  /**
+    * custom setting
+    */
+  word-break: break-all;
+}

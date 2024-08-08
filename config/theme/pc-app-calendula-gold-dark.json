@@ -1,0 +1,24 @@
+{
+    "palette": {
+      "mode": "dark",
+      "primary": {
+        "main": "#faad14"
+      }
+    },
+    "components":{
+      "MuiAppBar": {
+        "styleOverrides":{
+          "root":{
+            "display":"none"
+          }
+        }
+      },
+      "MuiToolbar": {
+        "styleOverrides":{
+          "root":{
+            "display":"none"
+          }
+        }
+      }
+    }
+}
