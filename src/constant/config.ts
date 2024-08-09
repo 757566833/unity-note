@@ -76,7 +76,7 @@ export const config:  IConfig = [
                     {
                         title: '高光反射',
                         subTitle:"逐顶点渲染以及逐像素渲染",
-                        img: 'https://minio.fzcode.com/unity/light/base/specular.png',
+                        img: 'https://minio.fzcode.com/unity/light/base/blinnPhongSpecular.png',
                         key: "specular"
                     }
                 ]
