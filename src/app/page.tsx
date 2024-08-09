@@ -90,7 +90,7 @@ const Header: React.FC = () => {
       <Logo direction={'row'} spacing={2} paddingX={1} alignItems={'center'}>
         <Image src={logo} width={40} height={40} alt={""} />
         {(!isDownXl || (isDownXl && !visible)) && <Typography variant="h6">
-          S3 Engine
+          Unity Note
         </Typography>}
       </Logo>
       <SearchForm>
@@ -133,7 +133,7 @@ export default function Component() {
     setTimeout(() => {
       setInitTabValue(true)
     }, 100);
-  }, [config])
+  }, [])
   const handleTabChange = useCallback((_: React.SyntheticEvent, e: string) => {
     setTab(e)
   }, [])
@@ -149,7 +149,7 @@ export default function Component() {
     }
 
     return tabs
-  }, [config])
+  }, [])
   const tabsContext = useMemo(() => {
 
     const tabsContext = [];
@@ -167,7 +167,7 @@ export default function Component() {
     }
 
     return tabsContext
-  }, [config])
+  }, [])
 
 
 

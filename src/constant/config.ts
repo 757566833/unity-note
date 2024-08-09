@@ -22,13 +22,13 @@ export const config:  IConfig = [
         key: 'base',
         group: [
             {
-                title: '模型',
-                key: 'modal',
+                title: 'model',
+                key: 'model',
                 children: [
                     {
                         title: '点与面',
                         subTitle:"模型点面基础",
-                        img: 'https://minio.fzcode.com/unity/base/space/3D_Cartesian.svg',
+                        img: 'https://minio.fzcode.com/unity/base/model/uv.png',
                         key: "base"
                     }
                 ]
@@ -38,20 +38,22 @@ export const config:  IConfig = [
                 key: 'space',
                 children: [
                     {
-                        title: '空间',
-                        img: 'https://minio.fzcode.com/unity/base/space/3D_Cartesian.svg',
+                        title: '空间转换',
+                        img: 'https://minio.fzcode.com/unity/base/space/corrdinate.png',
+                        subTitle:"如何从data转为像素的",
                         key: "coordinate"
                     }
                 ]
             },
             {
-                title: 'aop',
-                key: 'aop',
+                title: 'render',
+                key: 'render',
                 children: [
                     {
-                        title: 'unit的切面编程',
-                        img: 'https://gw.alipayobjects.com/zos/antfincdn/6JqQWvSjJc/8a0b9e2f-7d8d-4e0b-8e2b-5b5c9c4a8e1b.png',
-                        key: ""
+                        title: 'shader的切面编程',
+                        subTitle:"unity可编程渲染管线中的结构",
+                        img: 'https://minio.fzcode.com/unity/base/render/aop.png',
+                        key: "aop"
                     }
                 ]
             },
@@ -66,9 +68,16 @@ export const config:  IConfig = [
                 key: 'base',
                 children: [
                     {
-                        title: '环境光',
-                        img: 'https://gw.alipayobjects.com/zos/antfincdn/6JqQWvSjJc/8a0b9e2f-7d8d-4e0b-8e2b-5b5c9c4a8e1b.png',
-                        key: ""
+                        title: '漫反射',
+                        subTitle:"逐顶点渲染、逐像素渲染以及半兰伯特",
+                        img: 'https://minio.fzcode.com/unity/light/base/diffuse.png',
+                        key: "diffuse"
+                    },
+                    {
+                        title: '高光反射',
+                        subTitle:"逐顶点渲染以及逐像素渲染",
+                        img: 'https://minio.fzcode.com/unity/light/base/specular.png',
+                        key: "specular"
                     }
                 ]
             },

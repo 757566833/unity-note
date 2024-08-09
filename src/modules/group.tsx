@@ -56,7 +56,7 @@ const ItemImageRender: React.FC<{ data: IItem }> = (props) => {
     const imageTextSize = imageText?.size || 24;
 
     const theme = useTheme();
-    return <Box style={{ aspectRatio: 854 / 480 }} position={'relative'}>
+    return <Box style={{ aspectRatio: 1 / 1 }} position={'relative'}>
         <CardMedia component={'img'} image={data.img} alt={""} height={'100%'} sx={{ objectFit: 'fill' }} />
 
         {imageTextString && <Box zIndex={10} top={0} right={0} left={0} bottom={0} position={'absolute'} display={'flex'} justifyContent={'center'} alignItems={'center'} padding={1} textAlign={'center'} bgcolor={'rgba(0,0,0,0.5)'} color={theme.palette.background.default}>
@@ -64,7 +64,6 @@ const ItemImageRender: React.FC<{ data: IItem }> = (props) => {
         </Box>}
     </Box>
 }
-const ItemContentRender = ItemImageRender
 
 
 const CustomCard = styled(Card)({
@@ -107,7 +106,7 @@ export const Items: React.FC<{ items?: IItem[], groupKey: string, pageKey: strin
         }
 
         return list
-    }, [groupKey, items, search]);
+    }, [groupKey, items, pageKey, props, search]);
 
 
     return <>

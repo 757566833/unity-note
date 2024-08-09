@@ -5,6 +5,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { Metadata } from 'next';
 
 import "./globals.css";
+import 'katex/dist/katex.min.css'
+import 'github-markdown-css/github-markdown.css'
 import { SearchProvider } from '@/context/search';
 import { MuiThemeRegistry } from '@/context/theme';
 import { WindowProvider } from '@/context/window';
@@ -12,8 +14,7 @@ import { MarkdownCss } from '@/common/markdown'
 import { MuiScroll } from '@/common/scroll';
 
 export const metadata: Metadata = {
-  title: "S3 Engine",
-  description: "欢迎来到 S3 Engine",
+  title: "Unity Note",
 };
 
 export default function RootLayout(props: { children: React.ReactNode }) {

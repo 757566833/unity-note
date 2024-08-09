@@ -1,11 +1,13 @@
 import { PHASE_PRODUCTION_BUILD, PHASE_PRODUCTION_SERVER } from 'next/constants.js';
 import createMDX from '@next/mdx';
 import remarkGfm from 'remark-gfm';
+import rehypeKatex from 'rehype-katex'
+import remarkMath from 'remark-math'
 const withMDX = createMDX({
     // Add markdown plugins here, as desired
     options: {
-        remarkPlugins: [remarkGfm],
-        rehypePlugins: [],
+        remarkPlugins: [remarkGfm,remarkMath],
+        rehypePlugins: [rehypeKatex],
     },
 })
 

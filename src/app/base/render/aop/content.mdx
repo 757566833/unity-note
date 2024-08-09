@@ -1,0 +1,103 @@
+
+# 可编程渲染管线
+
+## 代码结构
+
+```shader
+Shader "Unlit/Demo"
+{
+    Properties
+    {
+        _MainTex ("Texture", 2D) = "white" {}
+    }
+    SubShader
+    {
+        Tags { "RenderType"="Opaque" }
+        LOD 100
+
+        Pass
+        {
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            // make fog work
+            #pragma multi_compile_fog
+
+            #include "UnityCG.cginc"
+
+            struct appdata
+            {
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
+            };
+
+            struct v2f
+            {
+                float2 uv : TEXCOORD0;
+                UNITY_FOG_COORDS(1)
+                float4 vertex : SV_POSITION;
+            };
+
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
+
+            v2f vert (appdata v)
+            {
+                v2f o;
+                o.vertex = UnityObjectToClipPos(v.vertex);
+                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                UNITY_TRANSFER_FOG(o,o.vertex);
+                return o;
+            }
+
+            fixed4 frag (v2f i) : SV_Target
+            {
+                // sample the texture
+                fixed4 col = tex2D(_MainTex, i.uv);
+                // apply fog
+                UNITY_APPLY_FOG(i.fogCoord, col);
+                return col;
+            }
+            ENDCG
+        }
+    }
+}
+
+```
+
+## Properties
+
+定义好的属性会出现在材质面板中，可以用来控制材质的渲染效果。
+
+## SubShader
+
+SubShader 是一个渲染通道，可以包含多个 Pass，每个 Pass 都是一个渲染步骤。
+
+### Tags
+
+Tags 是用来给 SubShader 添加标签的，可以用来控制 SubShader 的渲染顺序、渲染类型等。
+
+### LOD
+
+LOD 是 Level of Detail 的缩写，用来控制 SubShader 的复杂度。可以根据这个值选择执行哪些pass
+
+### Pass
+
+Pass 是一个渲染步骤，可以包含顶点着色器、片段着色器等。
+
+#### CGPROGRAM
+
+CGPROGRAM 和 ENDCG 之间的代码是 Cg/HLSL 代码，用来编写顶点着色器和片段着色器。
+
+#### #pragma
+
+#pragma 是指令，用来告诉 Unity 如何处理这段代码。
+
+
+#### vert
+
+这是第一个切面，vert 是顶点着色器的入口函数，有多少顶点执行多少次，用来处理顶点数据，参数即为索要的数据，太多没用的数据会占带宽，太少则无法完成计算，返回值则会传递到下一个切面
+
+#### frag
+
+frag 是片段着色器的入口函数，面栅格化以后有多少像素执行多少次，参数为vert的返回值，由于逐像素渲染，在这里面处理特效会吃性能，但也同样会更细腻
