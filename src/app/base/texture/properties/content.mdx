@@ -1,0 +1,51 @@
+
+# 素材的属性
+
+
+## wrap
+
+素材填充，类似css 的  background相关属性，点击素材后再wrap mode 中选择
+
+### clamp
+
+超出[1,0]以后会取边界  
+
+![clamp](https://minio.fzcode.com/unity/wrapClamp.png)
+
+
+### repeat
+
+超出[1,0]以后会重复采样，最终的结果是循环渲染  
+
+![repeat](https://minio.fzcode.com/unity/wrapRepeat.png)
+
+
+## filter
+
+当纹理因为变化而产生的拉伸时将采用那种滤波模式，放大和缩小的逻辑不太一样.
+
+### 放大
+
+#### Bilinear
+
+线性滤波，每个目标像素 他会找到四个临近像素，线性插值后混合得到最终像素 
+
+![clamp](https://minio.fzcode.com/unity/filterBilinear.png)
+
+
+#### Point
+
+nearest neighbor ,放大或缩小时，它的采样像素数通常只有一个,俯视角下看不出太多
+
+![repeat](https://minio.fzcode.com/unity/filterPoint.png)
+
+#### Trilinear
+
+和Bilinear一样，额外会在多层渐远纹理之间的混合，如果没有使用多层渐远纹理技术，那就和Bilinear一摸一样的
+
+![repeat](https://minio.fzcode.com/unity/filterTrilinear.png)
+
+### 全部
+
+![repeat](https://minio.fzcode.com/unity/filterfull.png)
+

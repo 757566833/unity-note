@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 
 import "./globals.css";
 import 'katex/dist/katex.min.css'
-import 'github-markdown-css/github-markdown.css'
+import 'github-markdown-css/github-markdown-dark.css'
 import { SearchProvider } from '@/context/search';
 import { MuiThemeRegistry } from '@/context/theme';
 import { WindowProvider } from '@/context/window';
