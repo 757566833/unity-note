@@ -22,33 +22,21 @@ export const config:  IConfig = [
         key: 'base',
         group: [
             {
-                title: 'model',
-                key: 'model',
+                title: 'common',
+                key: 'common',
                 children: [
                     {
                         title: '点与面',
                         subTitle:"模型点面基础",
                         img: 'https://minio.fzcode.com/unity/uv.png',
                         key: "base"
-                    }
-                ]
-            },
-            {
-                title: 'space',
-                key: 'space',
-                children: [
+                    },
                     {
                         title: '空间转换',
                         img: 'https://minio.fzcode.com/unity/corrdinate.png',
                         subTitle:"如何从data转为像素的",
                         key: "coordinate"
-                    }
-                ]
-            },
-            {
-                title: 'render',
-                key: 'render',
-                children: [
+                    },
                     {
                         title: 'shader的切面编程',
                         subTitle:"unity可编程渲染管线中的结构",
@@ -57,6 +45,7 @@ export const config:  IConfig = [
                     }
                 ]
             },
+            
             {
                 title: 'light',
                 key: 'light',
@@ -90,6 +79,42 @@ export const config:  IConfig = [
                         subTitle:"法线纹理",
                         img: 'https://minio.fzcode.com/unity/normalTexture.png',
                         key: "normalTexture"
+                    },
+                    {
+                        title: 'gradient',
+                        subTitle:"渐变纹理",
+                        img: 'https://minio.fzcode.com/unity/gradient.png',
+                        key: "gradient"
+                    },
+                ]
+            },
+            {
+                title: 'transparent',
+                key: 'transparent',
+                children: [
+                    {
+                        title: 'render order',
+                        subTitle:"渲染顺序",
+                        img: 'https://minio.fzcode.com/unity/render_order.png',
+                        key: "renderOrder"
+                    },
+                    {
+                        title: 'alpha test',
+                        subTitle:"透明度测试是一种只有透明和非透明的渲染方式",
+                        img: 'https://minio.fzcode.com/unity/alpha_test.png',
+                        key: "alphaTest"
+                    },
+                    {
+                        title: 'alpha blend',
+                        subTitle:"透明度混合",
+                        img: 'https://minio.fzcode.com/unity/alpha_blend.png',
+                        key: "alphaBlend"
+                    },
+                    {
+                        title: 'alpha blend both side',
+                        subTitle:"可见内部的透明度混合",
+                        img: 'https://minio.fzcode.com/unity/alpha_blend_both_side.png',
+                        key: "alphaBlendBothSide"
                     },
                 ]
             },

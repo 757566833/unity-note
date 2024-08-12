@@ -13,7 +13,7 @@ import { Group } from "@/modules/group"
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import useSWR from "swr"
 import Image from "next/image"
-import logo from '@/assets/logo/s3_logo.png'
+import logo from '@/assets/logo/unity_icon.png'
 import { jsonFetcher } from "@/services"
 import { AppBar, Box, IconButton, InputAdornment, Stack, styled, Tab, Tabs, TextField, Toolbar, Typography, useMediaQuery, useTheme } from "@mui/material"
 import { TabContext, TabList, TabPanel } from "@mui/lab"

@@ -6,7 +6,7 @@ import remarkMath from 'remark-math'
 const withMDX = createMDX({
     // Add markdown plugins here, as desired
     options: {
-        remarkPlugins: [remarkGfm,remarkMath],
+        remarkPlugins: [remarkGfm, remarkMath],
         rehypePlugins: [rehypeKatex],
     },
 })
@@ -19,7 +19,8 @@ const config = (phase) => {
         output: 'standalone',
         pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
         experimental: {
-            mdxRs: true,
+            // 必须关闭才能正确的加载markdown插件
+            mdxRs: false,
         },
     }
     if (PHASE_PRODUCTION_SERVER === phase || PHASE_PRODUCTION_BUILD == phase) {
