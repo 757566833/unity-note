@@ -119,5 +119,32 @@ export const config:  IConfig = [
                 ]
             },
         ]
+    },{
+        title:'函数',
+        key:'function',
+        group:[{
+            title: 'func',
+            key: 'func',
+            children: [
+                {
+                    title: 'common',
+                    subTitle:"基本运算",
+                    img: 'https://minio.fzcode.com/unity/function.jpg',
+                    key: "common"
+                },
+                {
+                    title: 'function part 1',
+                    img: 'https://minio.fzcode.com/unity/function.jpg',
+                    subTitle:"函数第一部分",
+                    key: "function1"
+                },
+                {
+                    title: 'shader的切面编程',
+                    subTitle:"unity可编程渲染管线中的结构",
+                    img: 'https://minio.fzcode.com/unity/aop.png',
+                    key: "aop"
+                }
+            ]
+        },]
     }
 ]

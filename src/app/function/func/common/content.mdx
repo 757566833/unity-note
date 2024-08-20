@@ -1,0 +1,111 @@
+
+# 基础运算
+
+## 一维
+
+### 加法
+
+```shader
+fixed a = 0.5
+fixed b = 0.5
+fixed c = a + b
+// 结果是1 对应白色
+```
+
+### 减法
+
+```shader
+fixed a = 0.5
+fixed b = 0.5
+fixed c = a - b
+// 结果是0 对应黑色
+```
+
+### 乘法
+
+```shader
+fixed a = 0.5
+fixed b = 0.5
+fixed c = a * b
+// 结果是0.25 对应灰色
+```
+
+### 除法
+
+```shader
+fixed a = 0.5
+fixed b = 0.5
+fixed c = a / b
+// 结果是1 对应白色
+```
+
+
+
+## 二维
+
+### 加法
+
+```shader
+fixed2 a = fixed2(0.5, 0.5)
+fixed2 b = fixed2(0.5, 0.5)
+fixed2 c = a + b
+// 结果是(1, 1) 对应白色
+```
+
+### 减法
+
+```shader
+fixed2 a = fixed2(0.5, 0.5)
+fixed2 b = fixed2(0.5, 0.5)
+fixed2 c = a - b
+// 结果是(0, 0) 对应黑色
+```
+
+## 转换
+
+### fixed2 -> fixed
+
+```shader
+fixed2 a = fixed2(0.5, 0.5)
+fixed c = a.x
+// 结果是0.5 对应灰色
+```
+
+### fixed -> fixed2
+
+```shader
+fixed a = 0.5
+fixed2 c = fixed2(a, a)
+// 结果是(0.5, 0.5) 对应灰色
+```
+### fixed -> fixed3
+
+```shader
+fixed a = 0.5
+fixed3 c = fixed3(a, a, a)
+// 结果是(0.5, 0.5, 0.5) 对应灰色
+```
+
+### fixed -> fixed4
+
+```shader
+fixed a = 0.5
+fixed4 c = fixed4(a, a, a, a)
+// 结果是(0.5, 0.5, 0.5, 0.5) 对应灰色
+```
+
+### fixed2 -> fixed3
+
+```shader
+fixed2 a = fixed2(0.5, 0.5)
+fixed3 c = fixed3(a, 0.5)
+// 结果是(0.5, 0.5, 0.5) 对应灰色
+```
+
+### fixed2 -> fixed4
+
+```shader
+fixed2 a = fixed2(0.5, 0.5)
+fixed4 c = fixed4(a, 0.5, 0.5)
+// 结果是(0.5, 0.5, 0.5, 0.5) 对应灰色
+```
