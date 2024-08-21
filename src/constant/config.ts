@@ -133,16 +133,10 @@ export const config:  IConfig = [
                     key: "common"
                 },
                 {
-                    title: 'function part 1',
+                    title: 'function',
                     img: 'https://minio.fzcode.com/unity/function.jpg',
-                    subTitle:"函数第一部分",
-                    key: "function1"
-                },
-                {
-                    title: 'shader的切面编程',
-                    subTitle:"unity可编程渲染管线中的结构",
-                    img: 'https://minio.fzcode.com/unity/aop.png',
-                    key: "aop"
+                    subTitle:"函数以及图像",
+                    key: "function"
                 }
             ]
         },]
